@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
-import AddAccountModal from "./modals/AddAccountModal";
+import AddAccountModal from "./modals/AddAccountModal/AddAccountModal";
 
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);

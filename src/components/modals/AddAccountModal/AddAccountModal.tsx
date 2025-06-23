@@ -1,13 +1,10 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { Field, Form, Formik, type FormikHelpers } from "formik";
-import { useAddAccountMutation } from "../../service/socialMediaApi";
-import CustomModal from "../ui/CustomModal/CustomModal";
-import FormikTextField from "../FormikTextField";
-import {
-  accountValidationSchema,
-  type AccountFormValues,
-} from "../../validation/accountValidation";
-import { styles } from "./stylesModals";
+import { useAddAccountMutation } from "@/service/socialMediaApi";
+import CustomModal from "@components/ui/CustomModal/CustomModal";
+import FormikTextField from "@components/FormikTextField";
+import { accountValidationSchema, type AccountFormValues } from "../schema";
+import { styles } from "../stylesModals";
 
 interface Props {
   isOpen: boolean;

@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import CustomModal from "../ui/CustomModal/CustomModal";
-import { useDeleteAccountMutation } from "../../service/socialMediaApi";
-import { styles } from "./stylesModals";
+import CustomModal from "@components/ui/CustomModal/CustomModal";
+import { useDeleteAccountMutation } from "@/service/socialMediaApi";
+import { styles } from "../stylesModals";
 
 interface Props {
   isOpen: boolean;
