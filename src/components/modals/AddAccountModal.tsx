@@ -1,12 +1,13 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { Field, Form, Formik, type FormikHelpers } from "formik";
-import { useAddAccountMutation } from "../service/socialMediaApi";
-import CustomModal from "./ui/CustomModal";
-import FormikTextField from "./FormikTextField";
+import { useAddAccountMutation } from "../../service/socialMediaApi";
+import CustomModal from "../ui/CustomModal/CustomModal";
+import FormikTextField from "../FormikTextField";
 import {
   accountValidationSchema,
   type AccountFormValues,
-} from "../validation/accountValidation";
+} from "../../validation/accountValidation";
+import { styles } from "./stylesModals";
 
 interface Props {
   isOpen: boolean;
@@ -38,31 +39,16 @@ const AddAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
   return (
     <CustomModal isOpen={isOpen} onClose={onClose}>
-      <Typography
-        variant="h5"
-        fontWeight={700}
-        textAlign="center"
-        sx={{
-          mb: 1.5,
-          letterSpacing: 0.5,
-          color: "info.main",
-        }}
-      >
+      <Typography variant="h5" sx={styles.modalHeader}>
         Add Account
       </Typography>
-      <Divider
-        sx={{
-          mb: 3,
-          borderColor: "info.light",
-          borderBottomWidth: 2,
-        }}
-      />
+      <Divider sx={styles.separator} />
       <Formik
         initialValues={initialValues}
         validationSchema={accountValidationSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting }: { isSubmitting: boolean }) => (
           <Form>
             <Stack spacing={2}>
               <Field

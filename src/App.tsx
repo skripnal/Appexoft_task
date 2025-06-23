@@ -8,7 +8,6 @@ function App() {
   if (error) return <h2>Error</h2>;
 
   if (isLoading) return <h2>Loading...</h2>;
-  console.log(data);
   return (
     <div>
       <Header />

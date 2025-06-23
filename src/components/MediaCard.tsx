@@ -7,15 +7,15 @@ import {
   CardActions,
   Box,
 } from "@mui/material";
-import DeleteAccountModal from "./DeleteAccountModal";
-import UpdateAccountModal from "./UpdateAccountModal";
+import DeleteAccountModal from "./modals/DeleteAccountModal";
+import UpdateAccountModal from "./modals/UpdateAccountModal";
 import type { AccountType } from "../types/AccountType";
 
 interface Props {
   account: AccountType;
 }
 
-const AccountCard: React.FC<Props> = ({ account }) => {
+const MediaCard: React.FC<Props> = ({ account }) => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
 
@@ -96,4 +96,4 @@ const AccountCard: React.FC<Props> = ({ account }) => {
   );
 };
 
-export default AccountCard;
+export default MediaCard;

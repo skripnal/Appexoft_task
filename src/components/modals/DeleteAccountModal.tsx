@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import CustomModal from "./ui/CustomModal";
-import { useDeleteAccountMutation } from "../service/socialMediaApi";
+import CustomModal from "../ui/CustomModal/CustomModal";
+import { useDeleteAccountMutation } from "../../service/socialMediaApi";
+import { styles } from "./stylesModals";
 
 interface Props {
   isOpen: boolean;
@@ -17,16 +18,7 @@ const DeleteAccountModal: React.FC<Props> = ({ isOpen, onClose, id }) => {
 
   return (
     <CustomModal isOpen={isOpen} onClose={onClose}>
-      <Typography
-        variant="h5"
-        fontWeight={700}
-        textAlign="center"
-        sx={{
-          mb: 1.5,
-          letterSpacing: 0.5,
-          color: "info.main",
-        }}
-      >
+      <Typography variant="h5" sx={styles.modalHeader}>
         Delete account?
       </Typography>
       <Box mt={3} display="flex" justifyContent="space-around">
