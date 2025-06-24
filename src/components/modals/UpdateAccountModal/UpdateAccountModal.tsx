@@ -23,11 +23,11 @@ const UpdateAccountModal: React.FC<Props> = ({ isOpen, onClose, account }) => {
 
   const [updateAccount] = useUpdateAccountMutation();
 
-  const handleSubmit = (
+  const handleSubmit = async (
     values: AccountFormValues,
     actions: FormikHelpers<AccountFormValues>
   ) => {
-    updateAccount({
+    await updateAccount({
       id: account.id,
       username: values.username,
       followers: values.followers,

@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import UpdateAccountModal from "./UpdateAccountModal";
 
-jest.mock("../../service/socialMediaApi", () => ({
+jest.mock("@service/socialMediaApi", () => ({
   useUpdateAccountMutation: () => [jest.fn()],
 }));
 
@@ -41,10 +41,7 @@ describe("UpdateAccountModal", () => {
   it("submits form and calls updateAccount mutation", async () => {
     const mockUpdateAccount = jest.fn();
     jest
-      .spyOn(
-        require("../../service/socialMediaApi"),
-        "useUpdateAccountMutation"
-      )
+      .spyOn(require("@service/socialMediaApi"), "useUpdateAccountMutation")
       .mockReturnValue([mockUpdateAccount]);
     render(
       <UpdateAccountModal isOpen={true} onClose={onClose} account={account} />

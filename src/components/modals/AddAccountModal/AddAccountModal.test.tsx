@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import AddAccountModal from "./AddAccountModal";
 
-jest.mock("../../service/socialMediaApi", () => ({
+jest.mock("@service/socialMediaApi", () => ({
   useAddAccountMutation: () => [jest.fn()],
 }));
 
@@ -29,7 +29,7 @@ describe("AddAccountModal", () => {
   it("submits form and calls addAccount mutation", async () => {
     const mockAddAccount = jest.fn();
     jest
-      .spyOn(require("../../service/socialMediaApi"), "useAddAccountMutation")
+      .spyOn(require("@service/socialMediaApi"), "useAddAccountMutation")
       .mockReturnValue([mockAddAccount]);
     render(<AddAccountModal isOpen={true} onClose={onClose} />);
     fireEvent.change(screen.getByLabelText(/Username/i), {

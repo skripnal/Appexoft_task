@@ -41,22 +41,36 @@ src/
   App.tsx                // Main application component
   main.tsx               // Entry point
   index.scss             // Global styles
+  setupTests.ts          // Test setup file
+  vite-env.d.ts          // Vite TypeScript env types
   components/            // Reusable React components
-    AddAccountModal.tsx
-    DeleteAccountModal.tsx
     FormikTextField.tsx
     Header.tsx
     MediaCard.tsx
-    UpdateAccountModal.tsx
-    ui/                  // UI-specific components (e.g., CustomModal)
+    modals/              // Modal components
+      schema.ts
+      stylesModals.ts
+      AddAccountModal/
+        AddAccountModal.tsx
+        AddAccountModal.test.tsx
+        index.ts
+      DeleteAccountModal/
+        DeleteAccountModal.tsx
+        index.ts
+      UpdateAccountModal/
+        UpdateAccountModal.tsx
+        UpdateAccountModal.test.tsx
+        index.ts
+    ui/                  // UI-specific components
+      CustomModal/
+        CustomModal.tsx
+        stylesCustomModal.ts
   service/               // API service logic (RTK Query)
     socialMediaApi.ts
   store/                 // Redux store setup
     store.ts
   types/                 // TypeScript type definitions
     AccountType.ts
-  validation/            // Form validation schemas
-    accountValidation.ts
 ```
 
 ## External Packages Used

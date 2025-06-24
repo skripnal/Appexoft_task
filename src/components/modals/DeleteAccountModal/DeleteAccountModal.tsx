@@ -12,8 +12,8 @@ interface Props {
 const DeleteAccountModal: React.FC<Props> = ({ isOpen, onClose, id }) => {
   const [deleteAccount] = useDeleteAccountMutation();
 
-  const handleDelete = () => {
-    deleteAccount(id);
+  const handleDelete = async () => {
+    await deleteAccount(id);
   };
 
   return (

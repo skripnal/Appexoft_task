@@ -20,11 +20,11 @@ const AddAccountModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
   const [addAccount] = useAddAccountMutation();
 
-  const handleSubmit = (
+  const handleSubmit = async (
     values: AccountFormValues,
     actions: FormikHelpers<AccountFormValues>
   ) => {
-    addAccount({
+    await addAccount({
       username: values.username,
       followers: values.followers,
       engagement: values.engagement,

@@ -8,7 +8,16 @@
     "allowJs": true,
     "jsx": "react-jsx",
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@service/*": ["service/*"],
+      "@store/*": ["store/*"],
+      "@types/*": ["types/*"],
+      "@/*": ["*"]
+    },
+    "verbatimModuleSyntax": false
   },
   "include": ["src", "**/*.test.ts", "**/*.test.tsx"]
 }
